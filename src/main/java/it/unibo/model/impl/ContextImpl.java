@@ -21,7 +21,7 @@ public class ContextImpl implements Context{
 
     @Override
     public Boundary getBoundary() {
-        return 
+        return this.bounds;
     }
 
 }
