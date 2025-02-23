@@ -1,0 +1,72 @@
+classDiagram
+
+class SpeedVectorImpl {
+    -Int x
+    -Int y
+
+    +SpeedVectorImpl(int x, int y)
+
+    +URM(BiFunction<SpeedVector, Long, Position> converter, Long dt) Position
+    +X() int 
+    +Y() int
+}
+class PositionImpl {
+    -int x 
+    -int y 
+
+    +PositionImpl() 
+
+    +X() int
+    +Y() int
+}
+
+class BoundaryImpl {
+    -int x0 
+    -int y0
+    -int x1 
+    -int y1 
+
+    +int X0()
+    +int X1()
+    +int Y0()
+    +int Y1()
+}
+
+class ContextImpl {
+    -SpeedVectorImpl factory
+    -Pacman pacman 
+    -Boundary bounds
+
+    +ContextImpl()
+
+    +getBoundary() Boundary
+}
+
+class PacmanImpl {
+    -Position actualPosition
+    -SpeedVector actualSpeed
+    -Boundary bounds
+    -Long lastUpdate
+
+    +PacmanImpl(Position position,Context ctx)
+    +updateTime(long time) 
+    +updateTime(long time) 
+    +updatePosition()
+    +verifyBorderTouch()
+    +run()
+}
+
+    PacmanImpl o-- Position
+    PacmanImpl o-- SpeedVector
+    PacmanImpl o-- Boundary
+
+    Pacman <|-- PacmanImpl
+    Position <|-- PositionImpl
+    SpeedVector <|-- SpeedVectorImpl
+    Boundary <|-- BoundaryImpl
+    SpeedVectorFactory <|-- SpeedVectorFactoryImpl
+    Context <|-- ContextImpl
+
+    ContextImpl o-- Pacman
+    ContextImpl o-- Boundary
+    ContextImpl o-- SpeedVectorFactory
