@@ -6,4 +6,6 @@ public interface Pacman {
 
     void setSpeed(SpeedVector vel);
 
+    Position getPosition();
+
 }

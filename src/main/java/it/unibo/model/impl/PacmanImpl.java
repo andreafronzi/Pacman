@@ -22,6 +22,7 @@ public class PacmanImpl implements Pacman,Runnable{
         this.bounds = ctx.getBoundary();
     }
 
+
     private void updateTime(final long time) {
         this.lastUpdate = time;
     }
@@ -64,5 +65,11 @@ public class PacmanImpl implements Pacman,Runnable{
                 myLogger.info("error");
             }
         }
+    }
+
+
+    @Override
+    public Position getPosition() { 
+        return this.actualPosition;
     }
 }
