@@ -9,6 +9,8 @@ import it.unibo.model.api.SpeedVectorFactory;
 import it.unibo.model.impl.ContextImpl;
 import it.unibo.model.impl.PositionImpl;
 import it.unibo.model.impl.SpeedVectorFactoryImpl;
+import it.unibo.view.api.GameView;
+import it.unibo.view.impl.GameViewImpl;
 
 public class ControllerImpl implements Controller{
 
@@ -16,10 +18,12 @@ public class ControllerImpl implements Controller{
 
     private final SpeedVectorFactory speedFactory;
     private final Context context;
+    private final GameView view;
 
     public ControllerImpl() {
         this.speedFactory = new SpeedVectorFactoryImpl();
         this.context = new ContextImpl();
+        this.view = new GameViewImpl();
     }
 
     @Override
@@ -46,4 +50,13 @@ public class ControllerImpl implements Controller{
         return true;
     }
 
+    @Override
+    public void start() {
+        this.view.open();
+    }
+    
+    public static void main(final String... args) {
+        final Controller controller = new ControllerImpl();
+        controller.start();
+    }
 }

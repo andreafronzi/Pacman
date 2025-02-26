@@ -98,9 +98,6 @@ public class GameViewImpl implements GameView {
 
 
 
-    public static void main(final String... args) {
-        new GameViewImpl().open();
-    }
 
 }
 

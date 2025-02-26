@@ -9,22 +9,27 @@ public interface Controller {
     /**
      * il seguente metodo permette il movimento verso il basso
      */
-    public boolean moveDown();
+    boolean moveDown();
     
     /**
      * il seguente metodo permette il movimetno verso l'alto
      */
-    public boolean moveUp();
+    boolean moveUp();
     
     /**
      * il seguente metodo permette il movimento verso destra
      */
-    public boolean moveRight();
+    boolean moveRight();
     
 
     /**
      * il seguente metodo permetto il movimento verso sinistra
      */
-    public boolean moveLeft();
+    boolean moveLeft();
+
+    /**
+     * il seguente metodo permette di rendere visibile la GUI 
+     */
+    void start();
 
 }

@@ -57,6 +57,7 @@ public class PacmanImpl implements Pacman,Runnable{
     @Override
     public void run() {
         while (true) {
+            System.out.print("ciao");
             updatePosition();
             try {
                 Thread.sleep(DELAY);
